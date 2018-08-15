@@ -1,0 +1,144 @@
+# Note: You MUST load these PID parameters for all joints that are using the
+# PositionJointInterface, otherwise the arm + gripper will act like a giant
+# parachute, counteracting gravity, and causing some of the wheels to lose
+# contact with the ground, so the robot won't be able to properly navigate. See
+# https://github.com/ros-simulation/gazebo_ros_pkgs/issues/612
+gazebo_ros_control:
+  pid_gains:
+    # these gains are used by the gazebo_ros_control plugin
+    HeadYaw:
+      p: 200.0
+      i: 1.0
+      d: 1.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    # the following gains are used by the gazebo_mimic_joint plugin
+    HeadPitch:
+      p: 200.0
+      i: 1.0
+      d: 1.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    # these gains are used by the gazebo_ros_control plugin
+    LShoulderPitch:
+      p: 200.0
+      i: 1.0
+      d: 1.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    # the following gains are used by the gazebo_mimic_joint plugin
+    LShoulderRoll:
+      p: 200.0
+      i: 1.0
+      d: 1.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    # these gains are used by the gazebo_ros_control plugin
+    LElbowYaw:
+      p: 200.0
+      i: 1.0
+      d: 1.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    # the following gains are used by the gazebo_mimic_joint plugin
+    LElbowRoll:
+      p: 200.0
+      i: 1.0
+      d: 1.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    # these gains are used by the gazebo_ros_control plugin
+    LWristYaw:
+      p: 200.0
+      i: 1.0
+      d: 0.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    # the following gains are used by the gazebo_mimic_joint plugin
+    LHand:
+      p: 200.0
+      i: 1.0
+      d: 1.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    # these gains are used by the gazebo_ros_control plugin
+    RShoulderPitch:
+      p: 200.0
+      i: 1.0
+      d: 1.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    # the following gains are used by the gazebo_mimic_joint plugin
+    RShoulderRoll:
+      p: 200.0
+      i: 1.0
+      d: 1.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    # these gains are used by the gazebo_ros_control plugin
+    RElbowYaw:
+      p: 200.0
+      i: 1.0
+      d: 1.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    # the following gains are used by the gazebo_mimic_joint plugin
+    RElbowRoll:
+      p: 200.0
+      i: 1.0
+      d: 1.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    # these gains are used by the gazebo_ros_control plugin
+    RWristYaw:
+      p: 200.0
+      i: 1.0
+      d: 1.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    # the following gains are used by the gazebo_mimic_joint plugin
+    RHand:
+      p: 200.0
+      i: 1.0
+      d: 0.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    # the following gains are used by the gazebo_mimic_joint plugin
+    HipRoll:
+      p: 800.0
+      i: 10
+      d: 1.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    # these gains are used by the gazebo_ros_control plugin
+    HipPitch:
+      p: 800.0
+      i: 10
+      d: 1.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+    # the following gains are used by the gazebo_mimic_joint plugin
+    KneePitch:
+      p: 800.0
+      i: 10
+      d: 1.0
+      i_clamp: 0.2
+      antiwindup: false
+      publish_state: true
+

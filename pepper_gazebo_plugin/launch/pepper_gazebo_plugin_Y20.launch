@@ -1,5 +1,14 @@
 <?xml version="1.0"?>
 <launch>
+  <!-- Load gazebo controller configurations -->
+  <!-- Note: You MUST load these PID parameters for all joints that are using
+       the PositionJointInterface, otherwise the arm + gripper will act like a
+       giant parachute, counteracting gravity, and causing some of the wheels
+       to lose contact with the ground, so the robot won't be able to properly
+       navigate. See
+       https://github.com/ros-simulation/gazebo_ros_pkgs/issues/612 -->
+  <rosparam file="$(find pepper_control)/config/gazebo/gazebo_controller.yaml" command="load" />
+
   <arg name="launch_control_trajectory_all" default="true"/>
   <!-- Load the URDF Model -->
   <include file="$(find pepper_description)/launch/pepper_upload.launch" />  
@@ -19,6 +28,6 @@
 -->
   <!-- Spawn a robot into Gazebo -->
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
-    args="-param robot_description -urdf -x -0.5 -y 1 -z 0.88 -model pepper_MP" />
+    args="-param robot_description -urdf -x -0.5 -y 1 -z 0.83 -model pepper_MP" />
 
 </launch>
